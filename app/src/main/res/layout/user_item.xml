@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
+    android:importantForAccessibility="no"
+    app:cardBackgroundColor="#E8E8E8"
+    tools:ignore="TextSizeCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="avatar image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/user_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="User Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/user_login"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/user_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/user_followers_title"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintStart_toStartOf="@+id/user_login_title"
+            app:layout_constraintTop_toBottomOf="@+id/user_login_title"
+            tools:ignore="TextContrastCheck"
+            tools:text="Hello" />
+
+        <TextView
+            android:id="@+id/user_followers_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Followers:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/user_followers"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintStart_toStartOf="@+id/user_login"
+            app:layout_constraintTop_toBottomOf="@+id/user_login" />
+
+        <TextView
+            android:id="@+id/user_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintStart_toStartOf="@+id/user_followers_title"
+            app:layout_constraintTop_toBottomOf="@+id/user_followers_title"
+            tools:text="Hello" />
+
+        <TextView
+            android:id="@+id/user_repos_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repos:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/user_repos"
+            app:layout_constraintStart_toEndOf="@+id/user_followers_title"
+            app:layout_constraintTop_toBottomOf="@+id/user_login" />
+
+        <TextView
+            android:id="@+id/user_repos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_followers"
+            app:layout_constraintStart_toStartOf="@+id/user_repos_title"
+            app:layout_constraintTop_toBottomOf="@+id/user_repos_title"
+            tools:text="Hello" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

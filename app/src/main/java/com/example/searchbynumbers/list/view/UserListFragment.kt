@@ -7,8 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.searchbynumbers.R
+import com.example.searchbynumbers.data.network.UserListRepository
 import com.example.searchbynumbers.data.network.modelList.User
 import com.example.searchbynumbers.list.UserListAdapter
+import com.example.searchbynumbers.list.presenter.UserListPresenter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 
 class UserListFragment : Fragment(), IUserListFragment {
     private lateinit var userListAdapter: UserListAdapter
@@ -22,6 +29,7 @@ class UserListFragment : Fragment(), IUserListFragment {
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         userListAdapter = UserListAdapter(this.requireContext(), arrayListOf())
         recyclerView.adapter = userListAdapter
+        UserListPresenter(this, UserListRepository())
 
         return view
     }

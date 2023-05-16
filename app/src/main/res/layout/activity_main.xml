@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,4 +27,30 @@
             android:icon="@drawable/ic_baseline_folder_copy_24"
             android:text="Repos" />
     </com.google.android.material.tabs.TabLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Greater or equal than:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout"
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        app:tint="#000000" />
 </androidx.constraintlayout.widget.ConstraintLayout>
